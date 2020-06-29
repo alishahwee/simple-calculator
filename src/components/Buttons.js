@@ -60,7 +60,7 @@ export default function Buttons(props) {
     },
     {
       id: "subtraction",
-      label: "-",
+      label: "–",
       key: "-"
     },
     {
