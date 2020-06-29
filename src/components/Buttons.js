@@ -10,7 +10,7 @@ export default function Buttons(props) {
     },
     {
       id: "pos/neg-toggle",
-      label: "+/-",
+      label: "±",
       key: "–"
     },
     {
@@ -94,14 +94,14 @@ export default function Buttons(props) {
       key: "."
     },
     {
-      id: "equals sign",
+      id: "equals-sign",
       label: "=",
       key: "=" || "Enter"
     }
   ];
 
   const keyPad = buttons.map((button) => {
-    return <Button id={button.id} label={button.label} key={button.key} />;
+    return <Button id={button.id} label={button.label[0]} key={button.key} />;
   });
   return <div className="Buttons">{keyPad}</div>;
 }

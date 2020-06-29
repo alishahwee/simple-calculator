@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Button extends Component {
   render() {
     return (
-      <div className="Button">
+      <div id={this.props.id} className="Button">
         <span>{this.props.label}</span>
       </div>
     );

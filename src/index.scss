@@ -22,5 +22,13 @@ body {
 
 .Buttons {
   height: 70%;
+  color: #fff;
   background: #0000FF;
+  display: grid;
+  grid: repeat(5, 1fr) / repeat(4, 1fr);
+  place-items: center;
+}
+
+#zero {
+  grid-column: 1 / 3;
 }
