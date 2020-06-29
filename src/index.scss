@@ -8,4 +8,19 @@ body {
   height: 500px;
   width: 350px;
   background: #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Screen {
+  height: 30%;
+  background: #000;
+}
+
+.Buttons {
+  height: 70%;
+  background: #0000FF;
 }
