@@ -2,6 +2,8 @@ $screenColor: rgb(65, 65, 65);
 $borderColor: rgb(30, 30, 30);
 $numberColor: rgb(165, 165, 165);
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+
 @font-face {font-family: "DS-Digital"; src: url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.eot"); src: url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.woff") format("woff"), url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.svg#DS-Digital") format("svg"); }
 
 body {
@@ -30,7 +32,7 @@ body {
 }
 
 .Buttons {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'DM Mono', monospace;
   font-size: 1.8rem;
   height: 70%;
   color: #fff;
