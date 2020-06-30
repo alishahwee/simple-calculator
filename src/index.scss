@@ -1,5 +1,6 @@
 $screenColor: rgb(65, 65, 65);
 $borderColor: rgb(30, 30, 30);
+$numberColor: rgb(165, 165, 165);
 
 @font-face {font-family: "DS-Digital"; src: url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.eot"); src: url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.woff") format("woff"), url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.svg#DS-Digital") format("svg"); }
 
@@ -19,6 +20,7 @@ body {
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  box-shadow: 12px 12px 15px 10px rgba(0, 0, 0, 0.5);
 }
 
 .Screen {
@@ -32,7 +34,6 @@ body {
   font-size: 1.8rem;
   height: 70%;
   color: #fff;
-  border: 1px solid $borderColor;
   display: grid;
   grid: repeat(5, 1fr) / repeat(4, 1fr);
 }
@@ -40,8 +41,9 @@ body {
 .Button {
   width: auto;
   height: auto;
-  border: 1px solid $borderColor;
-  background: rgb(150, 150, 150);
+  border-bottom: 1px solid $borderColor;
+  border-right: 1px solid $borderColor;
+  background: rgb(110, 110, 110);
   display: grid;
   place-items: center;
 }
@@ -50,6 +52,22 @@ body {
   grid-column: 1 / 3;
 }
 
+#cancel {
+  background: rgb(160, 35, 35);
+}
+
 #equals-sign {
-  background: rgb(200, 125, 50);
+  background: rgb(210, 130, 35);
+}
+
+#zero, #decimal, #equals-sign {
+  border-bottom: none;
+}
+
+#division, #multiplication, #subtraction, #addition, #equals-sign {
+  border-right: none;
+}
+
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #decimal {
+  background: $numberColor;
 }

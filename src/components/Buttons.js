@@ -4,7 +4,7 @@ import Button from './Button.js';
 export default function Buttons(props) {
   const buttons = [
     {
-      id: "all-cancel/cancel-entry",
+      id: "cancel",
       label: ["AC", "CE"],
       key: "c" || "Escape"
     },
