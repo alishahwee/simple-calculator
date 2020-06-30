@@ -46,13 +46,12 @@ body {
   background: rgb(110, 110, 110);
   display: grid;
   place-items: center;
-}
-
-.Button:hover {
-  font-size: 2rem;
-  border: none;
-  outline: 1px solid white;
-  z-index: 2;
+  &:hover {
+    font-size: 2rem;
+    border: none;
+    outline: 1px solid white;
+    z-index: 2;
+  }
 }
 
 #zero {
