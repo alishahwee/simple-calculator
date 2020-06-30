@@ -4,100 +4,100 @@ import Button from './Button.js';
 export default function Buttons(props) {
   const buttons = [
     {
-      id: "clear",
-      label: ["AC", "CE"],
-      key: "c" || "Escape"
+      id: 'clear',
+      label: ['AC', 'CE'],
+      key: 'c' || 'Escape',
     },
     {
-      id: "pos/neg-toggle",
-      label: "±",
-      key: "–"
+      id: 'pos/neg-toggle',
+      label: '±',
+      key: '–',
     },
     {
-      id: "percentage",
-      label: "%",
-      key: "%"
+      id: 'percentage',
+      label: '%',
+      key: '%',
     },
     {
-      id: "divide",
-      label: "÷",
-      key: "/"
+      id: 'divide',
+      label: '÷',
+      key: '/',
     },
     {
-      id: "seven",
-      label: "7",
-      key: "7"
+      id: 'seven',
+      label: '7',
+      key: '7',
     },
     {
-      id: "eight",
-      label: "8",
-      key: "8"
+      id: 'eight',
+      label: '8',
+      key: '8',
     },
     {
-      id: "nine",
-      label: "9",
-      key: "9"
+      id: 'nine',
+      label: '9',
+      key: '9',
     },
     {
-      id: "multiply",
-      label: "x",
-      key: "*"
+      id: 'multiply',
+      label: 'x',
+      key: '*',
     },
     {
-      id: "four",
-      label: "8",
-      key: "4"
+      id: 'four',
+      label: '8',
+      key: '4',
     },
     {
-      id: "five",
-      label: "5",
-      key: "5"
+      id: 'five',
+      label: '5',
+      key: '5',
     },
     {
-      id: "six",
-      label: "6",
-      key: "6"
+      id: 'six',
+      label: '6',
+      key: '6',
     },
     {
-      id: "subtract",
-      label: "–",
-      key: "-"
+      id: 'subtract',
+      label: '–',
+      key: '-',
     },
     {
-      id: "one",
-      label: "1",
-      key: "1"
+      id: 'one',
+      label: '1',
+      key: '1',
     },
     {
-      id: "two",
-      label: "2",
-      key: "2"
+      id: 'two',
+      label: '2',
+      key: '2',
     },
     {
-      id: "three",
-      label: "3",
-      key: "3"
+      id: 'three',
+      label: '3',
+      key: '3',
     },
     {
-      id: "add",
-      label: "+",
-      key: "+"
+      id: 'add',
+      label: '+',
+      key: '+',
     },
     {
-      id: "zero",
-      label: "0",
-      key: "0"
+      id: 'zero',
+      label: '0',
+      key: '0',
     },
     {
-      id: "decimal",
-      label: ".",
-      key: "."
+      id: 'decimal',
+      label: '.',
+      key: '.',
     },
     {
-      id: "equals",
-      label: "=",
-      key: "=" || "Enter"
-    }
+      id: 'equals',
+      label: '=',
+      key: '=' || 'Enter',
+    },
   ];
 
   const keyPad = buttons.map((button) => {

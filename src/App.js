@@ -4,9 +4,9 @@ import Footnote from './components/Footnote';
 
 export default function App(props) {
   return (
-    <div className='App'>
+    <div className="App">
       <Calculator />
-      <Footnote />  
+      <Footnote />
     </div>
   );
 }

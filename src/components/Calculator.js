@@ -7,14 +7,19 @@ export default class Calculator extends Component {
     super(props);
     this.state = {
       input: '',
-      output: '',
+      output: '0',
     };
+    this.updateInput = this.updateInput.bind(this);
+  }
+
+  updateInput(input) {
+    this.setState({ input: input });
   }
 
   render() {
     return (
       <div className="Calculator">
-        <Display />
+        <Display input={this.state.input} output={this.state.output} />
         <Buttons />
       </div>
     );
