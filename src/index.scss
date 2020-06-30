@@ -23,7 +23,7 @@ body {
   box-shadow: 12px 12px 15px 10px rgba(0, 0, 0, 0.5);
 }
 
-.Screen {
+.Display {
   font-family: DS-Digital;
   height: 30%;
   background: $screenColor;
@@ -48,23 +48,30 @@ body {
   place-items: center;
 }
 
+.Button:hover {
+  font-size: 2rem;
+  border: none;
+  outline: 1px solid white;
+  z-index: 2;
+}
+
 #zero {
   grid-column: 1 / 3;
 }
 
-#cancel {
+#clear {
   background: rgb(160, 35, 35);
 }
 
-#equals-sign {
+#equals {
   background: rgb(210, 130, 35);
 }
 
-#zero, #decimal, #equals-sign {
+#zero, #decimal, #equals {
   border-bottom: none;
 }
 
-#division, #multiplication, #subtraction, #addition, #equals-sign {
+#divide, #multiply, #subtract, #add, #equals {
   border-right: none;
 }
 

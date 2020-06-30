@@ -4,7 +4,7 @@ import Button from './Button.js';
 export default function Buttons(props) {
   const buttons = [
     {
-      id: "cancel",
+      id: "clear",
       label: ["AC", "CE"],
       key: "c" || "Escape"
     },
@@ -19,7 +19,7 @@ export default function Buttons(props) {
       key: "%"
     },
     {
-      id: "division",
+      id: "divide",
       label: "÷",
       key: "/"
     },
@@ -39,7 +39,7 @@ export default function Buttons(props) {
       key: "9"
     },
     {
-      id: "multiplication",
+      id: "multiply",
       label: "x",
       key: "*"
     },
@@ -59,7 +59,7 @@ export default function Buttons(props) {
       key: "6"
     },
     {
-      id: "subtraction",
+      id: "subtract",
       label: "–",
       key: "-"
     },
@@ -79,7 +79,7 @@ export default function Buttons(props) {
       key: "3"
     },
     {
-      id: "addition",
+      id: "add",
       label: "+",
       key: "+"
     },
@@ -94,7 +94,7 @@ export default function Buttons(props) {
       key: "."
     },
     {
-      id: "equals-sign",
+      id: "equals",
       label: "=",
       key: "=" || "Enter"
     }

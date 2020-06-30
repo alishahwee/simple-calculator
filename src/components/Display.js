@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function Screen(props) {
+export default function Display(props) {
   return (
-    <div className="Screen">
+    <div className="Display">
       {/*TODO*/}
     </div>
   );
