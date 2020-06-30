@@ -45,7 +45,7 @@ export default function Buttons(props) {
     },
     {
       id: 'four',
-      label: '8',
+      label: '4',
       key: '4',
     },
     {
