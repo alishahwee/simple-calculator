@@ -10,17 +10,36 @@ export default class Calculator extends Component {
       output: '0',
     };
     this.updateInput = this.updateInput.bind(this);
+    this.updateOutput = this.updateOutput.bind(this);
+    this.clearInput = this.clearInput.bind(this);
+    this.clearOutput = this.clearOutput.bind(this);
   }
 
   updateInput(input) {
-    this.setState({ input: input });
+    this.setState((prevState) => ({
+      input: prevState.input + input
+    }));
+  }
+
+  updateOutput(output) {
+    this.setState((prevState) => ({
+      output: prevState.output + output
+    }));
+  }
+
+  clearInput() {
+    this.setState({ input: '' });
+  }
+
+  clearOutput() {
+    this.setState({ output: '' });
   }
 
   render() {
     return (
       <div className="Calculator">
         <Display input={this.state.input} output={this.state.output} />
-        <Buttons />
+        <Buttons updateInput={this.updateInput} />
       </div>
     );
   }
