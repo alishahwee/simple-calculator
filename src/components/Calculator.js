@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Display from './components/Display.js';
-import Buttons from './components/Buttons.js';
+import Display from './Display.js';
+import Buttons from './Buttons.js';
 
 export default class Calculator extends Component {
   render() {
