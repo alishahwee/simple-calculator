@@ -8,7 +8,7 @@ export default class Calculator extends Component {
     this.state = {
       input: '',
       output: 0,
-      lastButtonPressed: 0,
+      lastButtonPressed: undefined,
     };
     this.updateInput = this.updateInput.bind(this);
     this.updateOutput = this.updateOutput.bind(this);

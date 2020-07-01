@@ -6,10 +6,10 @@ export default function Buttons(props) {
     {
       id: 'clear',
       label: ['AC', 'CE'],
-      key: 'c' || 'Escape',
+      key: ['c', 'Escape'],
     },
     {
-      id: 'pos/neg-toggle',
+      id: 'neg-toggle',
       label: '±',
       key: '–',
     },
@@ -96,7 +96,7 @@ export default function Buttons(props) {
     {
       id: 'equals',
       label: '=',
-      key: '=' || 'Enter',
+      key: ['=', 'Enter'],
     },
   ];
 
@@ -107,6 +107,7 @@ export default function Buttons(props) {
         label={button.label[0]}
         key={button.key}
         lastButtonPressed={props.lastButtonPressed}
+        updateLastButtonPressed={props.updateLastButtonPressed}
       />
     );
   });

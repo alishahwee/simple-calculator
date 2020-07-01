@@ -14,8 +14,10 @@ export default class Button extends Component {
     document.removeEventListener('keydown', this.handleKey);
   }
 
-  handleKey() {
-    // TODO
+  handleKey(e) {
+    if (e.keyCode in this.props.key) {
+      this.props.updateLastButtonPressed(this.props.label);
+    }
   }
 
   render() {
