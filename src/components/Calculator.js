@@ -7,24 +7,30 @@ export default class Calculator extends Component {
     super(props);
     this.state = {
       input: '',
-      output: '0',
+      output: 0,
+      lastButtonPressed: 0,
     };
     this.updateInput = this.updateInput.bind(this);
     this.updateOutput = this.updateOutput.bind(this);
+    this.updateLastButtonPressed = this.updateLastButtonPressed.bind(this);
     this.clearInput = this.clearInput.bind(this);
     this.clearOutput = this.clearOutput.bind(this);
   }
 
   updateInput(input) {
     this.setState((prevState) => ({
-      input: prevState.input + input
+      input: prevState.input + input,
     }));
   }
 
   updateOutput(output) {
     this.setState((prevState) => ({
-      output: prevState.output + output
+      output: prevState.output + output,
     }));
+  }
+
+  updateLastButtonPressed(key) {
+    this.setState({ lastButtonPressed: key });
   }
 
   clearInput() {
@@ -37,9 +43,14 @@ export default class Calculator extends Component {
 
   render() {
     return (
-      <div className="Calculator">
+      <div className='Calculator'>
         <Display input={this.state.input} output={this.state.output} />
-        <Buttons updateInput={this.updateInput} />
+        <Buttons
+          lastButtonPressed={this.state.lastButtonPressed}
+          updateInput={this.updateInput}
+          updateOutput={this.updateOutput}
+          updateLastButtonPressed={this.updateLastButtonPressed}
+        />
       </div>
     );
   }

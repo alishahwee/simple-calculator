@@ -101,7 +101,14 @@ export default function Buttons(props) {
   ];
 
   const keyPad = buttons.map((button) => {
-    return <Button id={button.id} label={button.label[0]} key={button.key} />;
+    return (
+      <Button
+        id={button.id}
+        label={button.label[0]}
+        key={button.key}
+        lastButtonPressed={props.lastButtonPressed}
+      />
+    );
   });
-  return <div className="Buttons">{keyPad}</div>;
+  return <div className='Buttons'>{keyPad}</div>;
 }

@@ -4,7 +4,20 @@ $numberColor: rgb(165, 165, 165);
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
 
-@font-face {font-family: "DS-Digital"; src: url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.eot"); src: url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.woff") format("woff"), url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.svg#DS-Digital") format("svg"); }
+@font-face {
+  font-family: 'DS-Digital';
+  src: url('//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.eot');
+  src: url('//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.eot?#iefix')
+      format('embedded-opentype'),
+    url('//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.woff2')
+      format('woff2'),
+    url('//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.woff')
+      format('woff'),
+    url('//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.ttf')
+      format('truetype'),
+    url('//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.svg#DS-Digital')
+      format('svg');
+}
 
 body {
   margin: 0;
@@ -34,7 +47,8 @@ body {
   background: $screenColor;
   display: flex;
   flex-direction: column;
-  & .Input, & .Output {
+  & .Input,
+  & .Output {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -104,14 +118,30 @@ body {
   background: rgb(210, 130, 35);
 }
 
-#zero, #decimal, #equals {
+#zero,
+#decimal,
+#equals {
   border-bottom: none;
 }
 
-#divide, #multiply, #subtract, #add, #equals {
+#divide,
+#multiply,
+#subtract,
+#add,
+#equals {
   border-right: none;
 }
 
-#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #decimal {
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine,
+#zero,
+#decimal {
   background: $numberColor;
 }
