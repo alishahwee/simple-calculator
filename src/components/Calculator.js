@@ -15,6 +15,15 @@ export default class Calculator extends Component {
     this.updateLastButtonPressed = this.updateLastButtonPressed.bind(this);
     this.clearInput = this.clearInput.bind(this);
     this.clearOutput = this.clearOutput.bind(this);
+    this.handleBackspace = this.handleBackspace.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleBackspace);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleBackspace);
   }
 
   updateInput(input) {
@@ -31,6 +40,7 @@ export default class Calculator extends Component {
 
   updateLastButtonPressed(key) {
     this.setState({ lastButtonPressed: key });
+    console.log(`Last button pressed was ${this.state.lastButtonPressed}`); // DELETE
   }
 
   clearInput() {
@@ -39,6 +49,12 @@ export default class Calculator extends Component {
 
   clearOutput() {
     this.setState({ output: '' });
+  }
+
+  handleBackspace(e) {
+    if (e.key === 'Backspace') {
+      console.log(`${e.key} was pressed`); // DELETE
+    }
   }
 
   render() {

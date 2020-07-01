@@ -103,9 +103,10 @@ export default function Buttons(props) {
   const keyPad = buttons.map((button) => {
     return (
       <Button
+        key={button.id}
         id={button.id}
         label={button.label[0]}
-        key={button.key}
+        keyValue={button.key}
         lastButtonPressed={props.lastButtonPressed}
         updateLastButtonPressed={props.updateLastButtonPressed}
       />
