@@ -107,7 +107,6 @@ export default function Buttons(props) {
         id={button.id}
         label={button.label[0]}
         keyValue={button.key}
-        lastButtonPressed={props.lastButtonPressed}
         updateLastButtonPressed={props.updateLastButtonPressed}
       />
     );

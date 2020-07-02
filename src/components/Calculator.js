@@ -73,8 +73,14 @@ export default class Calculator extends Component {
       <div className='Calculator'>
         <Display formula={this.state.formula} currentVal={this.state.currentVal} />
         <Buttons
-          lastButtonPressed={this.state.lastButtonPressed}
           updateLastButtonPressed={this.updateLastButtonPressed}
+          handleNumber={this.handleNumber}
+          handleOperator={this.handleOperator}
+          handleClear={this.handleClear}
+          handleEvaluate={this.handleEvaluate}
+          handleDecimal={this.handleDecimal}
+          handleSignToggle={this.handleSignToggle}
+          handlePercent={this.handlePercent}
         />
       </div>
     );
