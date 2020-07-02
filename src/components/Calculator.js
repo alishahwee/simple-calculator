@@ -9,7 +9,6 @@ export default class Calculator extends Component {
       formula: '',
       currentVal: 0,
       lastButtonPressed: undefined,
-      evaluated: false,
     };
     this.updateLastButtonPressed = this.updateLastButtonPressed.bind(this);
     this.handleBackspace = this.handleBackspace.bind(this);
