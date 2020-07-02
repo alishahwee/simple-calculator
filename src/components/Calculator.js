@@ -32,11 +32,19 @@ export default class Calculator extends Component {
     }));
   }
 
-  updateOutput(output) {
-    this.setState((prevState) => ({
-      output: prevState.output + output,
-    }));
-  }
+  updateOutput() {
+    if (Number.isInteger(Number(this.state.lastButtonPressed)) || this.state.lastButtonPressed === '.') {
+      this.setState((prevState) => {
+        if (prevState.output == 0 && prevState.lastButtonPressed == '.') {
+          return { output: prevState.output + output };
+        } else if (prevState.output == 0 && (prevState.lastButtonPressed != '.' || prevState.lastButtonPressed != 0)) {
+          return { output: output};
+        } else if (prevState.output == 0 && prevState.lastButtonPressed == 0) {
+          return;
+        }
+      })
+    }  
+  }  
 
   updateLastButtonPressed(key) {
     this.setState({ lastButtonPressed: key });
@@ -66,6 +74,8 @@ export default class Calculator extends Component {
           updateInput={this.updateInput}
           updateOutput={this.updateOutput}
           updateLastButtonPressed={this.updateLastButtonPressed}
+          clearInput={this.clearInput}
+          clearOutput={this.clearOutput}
         />
       </div>
     );
