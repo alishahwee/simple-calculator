@@ -7,7 +7,7 @@ export default class Calculator extends Component {
     super(props);
     this.state = {
       formula: '',
-      currentVal: 0,
+      currentVal: '0',
       lastButtonPressed: undefined,
     };
     this.updateLastButtonPressed = this.updateLastButtonPressed.bind(this);
@@ -40,8 +40,12 @@ export default class Calculator extends Component {
     }
   }
 
-  handleNumber() {
-    // TODO
+  handleNumber(num) {
+    if (this.state.currentVal === '0') {
+      this.setState({ currentVal: num });
+    } else {
+      this.setState((prevState) => ({ currentVal: prevState.currentVal + num }));
+    }
   }
 
   handleOperator() {

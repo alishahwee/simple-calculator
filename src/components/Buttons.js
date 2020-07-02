@@ -108,6 +108,13 @@ export default function Buttons(props) {
         label={button.label[0]}
         keyValue={button.key}
         updateLastButtonPressed={props.updateLastButtonPressed}
+        handleNumber={props.handleNumber}
+        handleOperator={props.handleOperator}
+        handleClear={props.handleClear}
+        handleEvaluate={props.handleEvaluate}
+        handleDecimal={props.handleDecimal}
+        handleSignToggle={props.handleSignToggle}
+        handlePercent={props.handlePercent}
       />
     );
   });

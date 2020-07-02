@@ -21,6 +21,7 @@ export default class Button extends Component {
       this.props.updateLastButtonPressed(e.key);
       if (Number.isInteger(Number(e.key))) {
         console.log(`${e.key} is a number`); // DELETE
+        this.props.handleNumber(e.key);
       }
     }
   }
