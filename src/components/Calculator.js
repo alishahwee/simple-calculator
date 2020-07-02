@@ -71,7 +71,10 @@ export default class Calculator extends Component {
   render() {
     return (
       <div className='Calculator'>
-        <Display formula={this.state.formula} currentVal={this.state.currentVal} />
+        <Display
+          formula={this.state.formula}
+          currentVal={this.state.currentVal}
+        />
         <Buttons
           updateLastButtonPressed={this.updateLastButtonPressed}
           handleNumber={this.handleNumber}
