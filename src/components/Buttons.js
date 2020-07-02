@@ -109,8 +109,6 @@ export default function Buttons(props) {
         keyValue={button.key}
         lastButtonPressed={props.lastButtonPressed}
         updateLastButtonPressed={props.updateLastButtonPressed}
-        clearInput={props.clearInput}
-        clearOutput={props.clearOutput}
       />
     );
   });

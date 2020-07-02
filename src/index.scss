@@ -47,17 +47,17 @@ body {
   background: $screenColor;
   display: flex;
   flex-direction: column;
-  & .Input,
-  & .Output {
+  & .Formula,
+  & .CurrentVal {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
   }
-  & .Input {
+  & .Formula {
     height: 30%;
     font-size: 2rem;
   }
-  & .Output {
+  & .CurrentVal {
     height: 70%;
     font-size: 4rem;
   }
@@ -101,7 +101,7 @@ body {
   text-align: center;
   color: rgb(155, 155, 155);
   & a {
-    color: inherit;
+    color: rgb(120, 140, 190);
     text-decoration: none;
   }
 }
