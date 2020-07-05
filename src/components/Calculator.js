@@ -29,6 +29,12 @@ export default class Calculator extends Component {
     document.removeEventListener('keydown', this.handleBackspace);
   }
 
+  componentDidUpdate() {
+    if (this.state.currentVal === '') {
+      this.setState({ currentVal: '0' });
+    }
+  }
+
   updateLastButtonPressed(key) {
     this.setState({ lastButtonPressed: key });
     console.log(`Last button pressed was ${this.state.lastButtonPressed}`); // DELETE
@@ -36,15 +42,21 @@ export default class Calculator extends Component {
 
   handleBackspace(e) {
     if (e.key === 'Backspace') {
+      this.setState((prevState) => ({
+        currentVal: prevState.currentVal.slice(0, -1),
+      }));
       console.log(`${e.key} was pressed`); // DELETE
     }
   }
 
   handleNumber(num) {
+    if (this.state.currentVal.length > 10) return;
     if (this.state.currentVal === '0') {
       this.setState({ currentVal: num });
     } else {
-      this.setState((prevState) => ({ currentVal: prevState.currentVal + num }));
+      this.setState((prevState) => ({
+        currentVal: prevState.currentVal + num,
+      }));
     }
   }
 
