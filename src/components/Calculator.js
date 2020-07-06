@@ -30,7 +30,7 @@ export default class Calculator extends Component {
     document.removeEventListener('keydown', this.handleBackspace);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     if (this.state.currentVal === '') {
       this.setState({
         currentVal: '0',
@@ -48,10 +48,11 @@ export default class Calculator extends Component {
   }
 
   handleBackspace(e) {
-    if (e.key === 'Backspace') {
+    if (e.key === 'Backspace' && this.state.currentVal !== '0') {
       this.setState((prevState) => ({
         currentVal: prevState.currentVal.slice(0, -1),
       }));
+      this.updateLastButtonPressed(e.key);
       console.log(`${e.key} was pressed`); // DELETE
     }
   }
