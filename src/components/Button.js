@@ -41,6 +41,9 @@ export default class Button extends Component {
     if (this.props.id === 'clear') {
       this.props.handleClear();
     }
+    if (this.props.id === 'decimal') {
+      this.props.handleDecimal();
+    }
   }
 
   render() {
