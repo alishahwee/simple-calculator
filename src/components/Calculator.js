@@ -74,8 +74,17 @@ export default class Calculator extends Component {
     }
   }
 
-  handleOperator() {
-    // TODO
+  handleOperator(o) {
+    if (/(\/|\+|-|\*)/.test(this.state.lastButtonPressed)) {
+      this.setState((prevState) => ({
+        formula: prevState.formula.replace(/(\/|\+|-|\*)$/, o), // FIX
+      }));
+    } else {
+      this.setState((prevState) => ({
+        formula: prevState.formula + prevState.currentVal + o,
+        currentVal: '0',
+      }));
+    }
   }
 
   handleClear() {
@@ -117,9 +126,11 @@ export default class Calculator extends Component {
 
   handlePercent() {
     this.setState((prevState) => ({
-      currentVal: parseFloat((prevState.currentVal / 100)
-        .toPrecision(this.preciseInt(prevState.currentVal)))
-        .toString(),
+      currentVal: parseFloat(
+        (prevState.currentVal / 100).toPrecision(
+          this.preciseInt(prevState.currentVal)
+        )
+      ).toString(),
     }));
   }
 

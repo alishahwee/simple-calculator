@@ -18,7 +18,6 @@ export default class Button extends Component {
   handleKey(e) {
     if (this.props.keyValue.includes(e.key)) {
       console.log(`${e.key} was pressed`); // DELETE
-      this.props.updateLastButtonPressed(e.key);
       if (Number.isInteger(Number(e.key))) {
         console.log(`${e.key} is a number`); // DELETE
         this.props.handleNumber(e.key);
@@ -35,12 +34,15 @@ export default class Button extends Component {
       if (e.key === '%') {
         this.props.handlePercent();
       }
+      if (['/', '*', '-', '+'].includes(e.key)) {
+        this.props.handleOperator(e.key);
+      }
+      this.props.updateLastButtonPressed(e.key);
     }
   }
 
   handleClick() {
     console.log(`${this.props.label} was clicked`); // DELETE
-    this.props.updateLastButtonPressed(this.props.keyValue);
     if (Number.isInteger(Number(this.props.keyValue))) {
       this.props.handleNumber(this.props.label);
     }
@@ -56,6 +58,7 @@ export default class Button extends Component {
     if (this.props.id === 'percent') {
       this.props.handlePercent();
     }
+    this.props.updateLastButtonPressed(this.props.keyValue);
   }
 
   render() {
