@@ -23,6 +23,13 @@ export default class Button extends Component {
         console.log(`${e.key} is a number`); // DELETE
         this.props.handleNumber(e.key);
       }
+      if (e.key === 'c' || e.key === 'Escape') {
+        if (this.props.label === 'AC') {
+          if (this.props.currentVal !== 0) {
+            // TODO
+          }
+        }
+      }
     }
   }
 

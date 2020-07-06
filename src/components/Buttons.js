@@ -4,11 +4,6 @@ import Button from './Button.js';
 export default function Buttons(props) {
   const buttons = [
     {
-      id: 'clear',
-      label: ['AC', 'CE'],
-      key: ['c', 'Escape'],
-    },
-    {
       id: 'neg-toggle',
       label: '±',
       key: '–',
@@ -105,12 +100,11 @@ export default function Buttons(props) {
       <Button
         key={button.id}
         id={button.id}
-        label={button.label[0]}
+        label={button.label}
         keyValue={button.key}
         updateLastButtonPressed={props.updateLastButtonPressed}
         handleNumber={props.handleNumber}
         handleOperator={props.handleOperator}
-        handleClear={props.handleClear}
         handleEvaluate={props.handleEvaluate}
         handleDecimal={props.handleDecimal}
         handleSignToggle={props.handleSignToggle}
@@ -118,5 +112,17 @@ export default function Buttons(props) {
       />
     );
   });
-  return <div className='Buttons'>{keyPad}</div>;
+  return (
+    <div className='Buttons'>
+      <Button // Clear button has its own button due to being stateful
+        key='clear'
+        id='clear'
+        label={props.clearLabel}
+        keyValue={['c', 'Escape']}
+        updateLastButtonPressed={props.updateLastButtonPressed}
+        handleClear={props.handleClear}
+      />
+      {keyPad}
+    </div>
+  );
 }

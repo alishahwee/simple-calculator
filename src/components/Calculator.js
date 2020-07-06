@@ -9,6 +9,7 @@ export default class Calculator extends Component {
       formula: '',
       currentVal: '0',
       lastButtonPressed: undefined,
+      clearLabel: 'AC',
     };
     this.updateLastButtonPressed = this.updateLastButtonPressed.bind(this);
     this.handleBackspace = this.handleBackspace.bind(this);
@@ -31,7 +32,10 @@ export default class Calculator extends Component {
 
   componentDidUpdate() {
     if (this.state.currentVal === '') {
-      this.setState({ currentVal: '0' });
+      this.setState({ 
+        currentVal: '0',
+        clearLabel: 'AC'
+      });
     }
   }
 
@@ -57,6 +61,9 @@ export default class Calculator extends Component {
       this.setState((prevState) => ({
         currentVal: prevState.currentVal + num,
       }));
+    }
+    if (this.state.clearLabel !== 'CE') {
+      this.setState({ clearLabel: 'CE' });
     }
   }
 
@@ -92,6 +99,9 @@ export default class Calculator extends Component {
           currentVal={this.state.currentVal}
         />
         <Buttons
+          formula={this.state.formula}
+          currentVal={this.state.currentVal}
+          clearLabel={this.state.clearLabel}
           updateLastButtonPressed={this.updateLastButtonPressed}
           handleNumber={this.handleNumber}
           handleOperator={this.handleOperator}
