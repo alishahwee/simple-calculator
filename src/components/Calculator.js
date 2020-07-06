@@ -32,9 +32,9 @@ export default class Calculator extends Component {
 
   componentDidUpdate() {
     if (this.state.currentVal === '') {
-      this.setState({ 
+      this.setState({
         currentVal: '0',
-        clearLabel: 'AC'
+        clearLabel: 'AC',
       });
     }
   }
@@ -72,7 +72,15 @@ export default class Calculator extends Component {
   }
 
   handleClear() {
-    // TODO
+    if (this.state.currentVal !== '0') {
+      this.setState({
+        currentVal: '0',
+        clearLabel: 'AC',
+      });
+    } else if (this.state.currentVal === '0' && this.state.formula !== '') {
+      this.setState({ formula: '' });
+    }
+    return;
   }
 
   handleEvaluate() {

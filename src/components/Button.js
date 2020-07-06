@@ -24,11 +24,7 @@ export default class Button extends Component {
         this.props.handleNumber(e.key);
       }
       if (e.key === 'c' || e.key === 'Escape') {
-        if (this.props.label === 'AC') {
-          if (this.props.currentVal !== 0) {
-            // TODO
-          }
-        }
+        this.props.handleClear();
       }
     }
   }
@@ -36,6 +32,9 @@ export default class Button extends Component {
   handleClick() {
     console.log(`${this.props.label} was clicked`); // DELETE
     this.props.updateLastButtonPressed(this.props.keyValue);
+    if (Number.isInteger(Number(this.props.keyValue))) {
+      this.props.handleNumber(this.props.label);
+    }
   }
 
   render() {
