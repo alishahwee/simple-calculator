@@ -35,6 +35,9 @@ export default class Button extends Component {
     if (Number.isInteger(Number(this.props.keyValue))) {
       this.props.handleNumber(this.props.label);
     }
+    if (this.props.id === 'clear') {
+      this.props.handleClear();
+    }
   }
 
   render() {
