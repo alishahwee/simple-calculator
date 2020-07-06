@@ -62,7 +62,7 @@ export default class Calculator extends Component {
         currentVal: prevState.currentVal + num,
       }));
     }
-    if (this.state.clearLabel !== 'CE') {
+    if (this.state.clearLabel !== 'CE' && this.state.currentVal !== '0') {
       this.setState({ clearLabel: 'CE' });
     }
   }
