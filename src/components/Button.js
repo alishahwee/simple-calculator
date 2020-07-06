@@ -26,6 +26,9 @@ export default class Button extends Component {
       if (e.key === 'c' || e.key === 'Escape') {
         this.props.handleClear();
       }
+      if (e.key === '.') {
+        this.props.handleDecimal();
+      }
     }
   }
 

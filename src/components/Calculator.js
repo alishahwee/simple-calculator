@@ -30,7 +30,7 @@ export default class Calculator extends Component {
     document.removeEventListener('keydown', this.handleBackspace);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate() {
     if (this.state.currentVal === '') {
       this.setState({
         currentVal: '0',
@@ -63,7 +63,7 @@ export default class Calculator extends Component {
       this.setState({ currentVal: num });
     } else {
       this.setState((prevState) => ({
-        currentVal: prevState.currentVal + num,
+        currentVal: prevState.currentVal + num
       }));
     }
   }
@@ -89,7 +89,10 @@ export default class Calculator extends Component {
   }
 
   handleDecimal() {
-    // TODO
+    console.log((this.state.currentVal.match(/\./g) || []).length); // DELETE
+    if ((this.state.currentVal.match(/\./g) || []).length === 0) {
+      this.setState((prevState) => ({ currentVal: prevState.currentVal + '.' }));
+    }
   }
 
   handleSignToggle() {
