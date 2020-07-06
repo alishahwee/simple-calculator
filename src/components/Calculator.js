@@ -37,6 +37,9 @@ export default class Calculator extends Component {
         clearLabel: 'AC',
       });
     }
+    if (this.state.currentVal !== '0' && this.state.clearLabel !== 'CE') {
+      this.setState({ clearLabel: 'CE' });
+    }
   }
 
   updateLastButtonPressed(key) {
@@ -61,9 +64,6 @@ export default class Calculator extends Component {
       this.setState((prevState) => ({
         currentVal: prevState.currentVal + num,
       }));
-    }
-    if (this.state.clearLabel !== 'CE' && this.state.currentVal !== '0') {
-      this.setState({ clearLabel: 'CE' });
     }
   }
 
