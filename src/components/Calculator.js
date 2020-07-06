@@ -96,7 +96,11 @@ export default class Calculator extends Component {
   }
 
   handleSignToggle() {
-    // TODO
+    if (/-/.test(this.state.currentVal)) {
+      this.setState((prevState) => ({ currentVal: prevState.currentVal.replace(/-/, '') }));
+    } else {
+      this.setState((prevState) => ({ currentVal: '-' + prevState.currentVal }));
+    }
   }
 
   handlePercent() {

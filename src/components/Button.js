@@ -29,6 +29,9 @@ export default class Button extends Component {
       if (e.key === '.') {
         this.props.handleDecimal();
       }
+      if (e.key === '–') {
+        this.props.handleSignToggle();
+      }
     }
   }
 
@@ -43,6 +46,9 @@ export default class Button extends Component {
     }
     if (this.props.id === 'decimal') {
       this.props.handleDecimal();
+    }
+    if (this.props.id === 'neg-toggle') {
+      this.props.handleSignToggle();
     }
   }
 
