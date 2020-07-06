@@ -32,6 +32,9 @@ export default class Button extends Component {
       if (e.key === '–') {
         this.props.handleSignToggle();
       }
+      if (e.key === '%') {
+        this.props.handlePercent();
+      }
     }
   }
 
@@ -49,6 +52,9 @@ export default class Button extends Component {
     }
     if (this.props.id === 'neg-toggle') {
       this.props.handleSignToggle();
+    }
+    if (this.props.id === 'percent') {
+      this.props.handlePercent();
     }
   }
 

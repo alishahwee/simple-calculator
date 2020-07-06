@@ -9,7 +9,7 @@ export default function Buttons(props) {
       key: '–',
     },
     {
-      id: 'percentage',
+      id: 'percent',
       label: '%',
       key: '%',
     },

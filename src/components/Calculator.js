@@ -20,6 +20,7 @@ export default class Calculator extends Component {
     this.handleDecimal = this.handleDecimal.bind(this);
     this.handleSignToggle = this.handleSignToggle.bind(this);
     this.handlePercent = this.handlePercent.bind(this);
+    this.preciseInt = this.preciseInt.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +40,11 @@ export default class Calculator extends Component {
     }
     if (this.state.currentVal !== '0' && this.state.clearLabel !== 'CE') {
       this.setState({ clearLabel: 'CE' });
+    }
+    if (this.state.currentVal.length > 10) {
+      this.setState((prevState) => ({
+        currentVal: prevState.currentVal.slice(0, 10),
+      }));
     }
   }
 
@@ -63,7 +69,7 @@ export default class Calculator extends Component {
       this.setState({ currentVal: num });
     } else {
       this.setState((prevState) => ({
-        currentVal: prevState.currentVal + num
+        currentVal: prevState.currentVal + num,
       }));
     }
   }
@@ -91,20 +97,39 @@ export default class Calculator extends Component {
   handleDecimal() {
     console.log((this.state.currentVal.match(/\./g) || []).length); // DELETE
     if ((this.state.currentVal.match(/\./g) || []).length === 0) {
-      this.setState((prevState) => ({ currentVal: prevState.currentVal + '.' }));
+      this.setState((prevState) => ({
+        currentVal: prevState.currentVal + '.',
+      }));
     }
   }
 
   handleSignToggle() {
     if (/-/.test(this.state.currentVal)) {
-      this.setState((prevState) => ({ currentVal: prevState.currentVal.replace(/-/, '') }));
+      this.setState((prevState) => ({
+        currentVal: prevState.currentVal.replace(/-/, ''),
+      }));
     } else {
-      this.setState((prevState) => ({ currentVal: '-' + prevState.currentVal }));
+      this.setState((prevState) => ({
+        currentVal: '-' + prevState.currentVal,
+      }));
     }
   }
 
   handlePercent() {
-    // TODO
+    this.setState((prevState) => ({
+      currentVal: parseFloat((prevState.currentVal / 100)
+        .toPrecision(this.preciseInt(prevState.currentVal)))
+        .toString(),
+    }));
+  }
+
+  // Created to handle precision in handlePercent function
+  preciseInt(num) {
+    if (/\./.test(num)) {
+      return num.length - 1;
+    } else {
+      return num.length;
+    }
   }
 
   render() {
