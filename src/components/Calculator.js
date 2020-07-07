@@ -88,12 +88,12 @@ export default class Calculator extends Component {
   }
 
   handleClear() {
-    if (this.state.currentVal !== '0') {
+    if (this.state.clearLabel === 'CE') {
       this.setState({
         currentVal: '0',
         clearLabel: 'AC',
       });
-    } else if (this.state.currentVal === '0' && this.state.formula !== '') {
+    } else if (this.state.currentVal === '0' && this.state.formula !== '' && this.state.clearLabel === 'AC') {
       this.setState({ formula: '' });
     }
     return;
@@ -117,7 +117,7 @@ export default class Calculator extends Component {
       this.setState((prevState) => ({
         currentVal: prevState.currentVal.replace(/-/, ''),
       }));
-    } else {
+    } else if (this.state.currentVal !== '0') {
       this.setState((prevState) => ({
         currentVal: '-' + prevState.currentVal,
       }));

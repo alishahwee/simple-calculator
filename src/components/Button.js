@@ -58,6 +58,9 @@ export default class Button extends Component {
     if (this.props.id === 'percent') {
       this.props.handlePercent();
     }
+    if (['divide', 'multiply', 'subtract', 'add'].includes(this.props.id)) {
+      this.props.handleOperator(this.props.keyValue);
+    }
     this.props.updateLastButtonPressed(this.props.keyValue);
   }
 
