@@ -50,7 +50,6 @@ export default class Calculator extends Component {
 
   updateLastButtonPressed(key) {
     this.setState({ lastButtonPressed: key });
-    console.log(`Last button pressed was ${this.state.lastButtonPressed}`); // DELETE
   }
 
   handleBackspace(e) {
@@ -59,7 +58,6 @@ export default class Calculator extends Component {
         currentVal: prevState.currentVal.slice(0, -1),
       }));
       this.updateLastButtonPressed(e.key);
-      console.log(`${e.key} was pressed`); // DELETE
     }
   }
 
@@ -113,7 +111,6 @@ export default class Calculator extends Component {
   }
 
   handleDecimal() {
-    console.log((this.state.currentVal.match(/\./g) || []).length); // DELETE
     if (/(\/|\+|-|\*|=)/.test(this.state.lastButtonPressed)) {
       this.setState({ currentVal: '0.'});
     } else if ((this.state.currentVal.match(/\./g) || []).length === 0) {

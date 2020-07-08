@@ -17,9 +17,7 @@ export default class Button extends Component {
 
   handleKey(e) {
     if (this.props.keyValue.includes(e.key)) {
-      console.log(`${e.key} was pressed`); // DELETE
       if (Number.isInteger(Number(e.key))) {
-        console.log(`${e.key} is a number`); // DELETE
         this.props.handleNumber(e.key);
       }
       if (e.key === 'c' || e.key === 'Escape') {
@@ -45,7 +43,6 @@ export default class Button extends Component {
   }
 
   handleClick() {
-    console.log(`${this.props.label} was clicked`); // DELETE
     if (Number.isInteger(Number(this.props.keyValue))) {
       this.props.handleNumber(this.props.label);
     }
