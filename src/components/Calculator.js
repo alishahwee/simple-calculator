@@ -67,6 +67,10 @@ export default class Calculator extends Component {
     if (this.state.currentVal.length > 10) return;
     if (this.state.currentVal === '0') {
       this.setState({ currentVal: num });
+    } else if (this.state.lastButtonPressed === '=' || this.state.lastButtonPressed === 'Enter') {
+      this.setState({ currentVal: num });
+    } else if (/(\/|\+|-|\*)/.test(this.state.lastButtonPressed)) {
+      this.setState({ currentVal: num });
     } else {
       this.setState((prevState) => ({
         currentVal: prevState.currentVal + num,
@@ -82,7 +86,6 @@ export default class Calculator extends Component {
     } else {
       this.setState((prevState) => ({
         formula: prevState.formula + prevState.currentVal + o,
-        currentVal: '0',
       }));
     }
   }
@@ -100,12 +103,20 @@ export default class Calculator extends Component {
   }
 
   handleEvaluate() {
-    // TODO
+    this.setState((prevState) => ({
+      formula: prevState.formula + prevState.currentVal,
+    }));
+    this.setState((prevState) => ({
+      formula: '',
+      currentVal: `${eval(prevState.formula)}`,
+    }));
   }
 
   handleDecimal() {
     console.log((this.state.currentVal.match(/\./g) || []).length); // DELETE
-    if ((this.state.currentVal.match(/\./g) || []).length === 0) {
+    if (/(\/|\+|-|\*|=)/.test(this.state.lastButtonPressed)) {
+      this.setState({ currentVal: '0.'});
+    } else if ((this.state.currentVal.match(/\./g) || []).length === 0) {
       this.setState((prevState) => ({
         currentVal: prevState.currentVal + '.',
       }));

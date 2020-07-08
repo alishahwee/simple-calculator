@@ -91,7 +91,7 @@ export default function Buttons(props) {
     {
       id: 'equals',
       label: '=',
-      key: ['=', 'Enter'],
+      key: '='
     },
   ];
 

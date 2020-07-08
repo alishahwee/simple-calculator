@@ -37,6 +37,9 @@ export default class Button extends Component {
       if (['/', '*', '-', '+'].includes(e.key)) {
         this.props.handleOperator(e.key);
       }
+      if (e.key === '=' || e.key === 'Enter') {
+        this.props.handleEvaluate();
+      }
       this.props.updateLastButtonPressed(e.key);
     }
   }
@@ -60,6 +63,9 @@ export default class Button extends Component {
     }
     if (['divide', 'multiply', 'subtract', 'add'].includes(this.props.id)) {
       this.props.handleOperator(this.props.keyValue);
+    }
+    if (this.props.id === 'equals') {
+      this.props.handleEvaluate();
     }
     this.props.updateLastButtonPressed(this.props.keyValue);
   }
